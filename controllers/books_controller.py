@@ -1,7 +1,7 @@
 from models.Book import Book
 from main import db
 from schemas.BookSchema import book_schema, books_schema
-from flask import Blueprint, request, jsonify
+from flask import Blueprint, request, jsonify, abort
 books = Blueprint('books', __name__, url_prefix="/books")
 
 @books.route("/", methods=["GET"])
