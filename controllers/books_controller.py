@@ -21,7 +21,7 @@ def book_create():
     db.session.add(new_book)
     db.session.commit()
     
-    return jsonify(book_schema.dump(new_book))
+    return (jsonify(book_schema.dump(new_book)), 200)
 
 @books.route("/<int:id>", methods=["GET"])
 def book_show(id):
